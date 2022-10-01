@@ -1,0 +1,188 @@
+---
+title: "PSTAT131_HW11"
+author: "Andrew Choi"
+date: "2022-10-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(tidymodels)
+library(ISLR)
+library(ggplot2)
+library(corrplot)
+library(data.table)
+
+```
+
+## Machine Learning Main Ideas
+
+<br>
+
+#### Question 1:
+Define supervised and unsupervised learning. What are the difference(s) between them?
+
+**Answer:** 
+<br>
+Supervised learning is a subcategory of machine learning used to "accurately predict future response given predictors, understand how predictors affect response, find the "best" model for response given predictors," and "assess the quality of our predictions and (or) estimation."
+(from lecture)
+
+Unsupervised learning is also a subcategory of machine learning used to "discover hidden patterns or data groupings without the need for human intervention." It is useful when looking for similarities and differences in data.
+(from https://www.ibm.com/cloud/learn/unsupervised-learning)
+
+The main difference between supervised and unsupervised learning is that supervised learning trains by using labeled data, which means that human intervention is required. Humans are needed to label data appropriately. This labeled data acts as an "answer key" that helps our supervised learning algorithm learn to predict/estimate more accurately. Unsupervised learning does not need labeled data, and instead works with large amounts of unlabeled data to train itself.
+(from https://www.ibm.com/cloud/blog/supervised-vs-unsupervised-learning)
+
+
+<br>
+
+
+#### Question 2:
+Explain the difference between a regression model and a classification model, specifically in the context of machine learning.
+
+**Answer:**
+<br>
+"The main difference between Regression and Classification algorithms is that Regression algorithms are used to predict the continuous values such as price, salary, age... and Classification algorithms are used to predict/classify discrete values such as Male or Female, True or False, Spam or Not Spam..."
+(from https://www.javatpoint.com/regression-vs-classification-in-machine-learning)
+
+
+<br>
+
+
+#### Question 3:
+Name two commonly used metrics for regression ML problems. Name two commonly used metrics for classification ML problems.
+
+**Answer:**
+<br>
+Two commonly used metrics for regression ML problems include Mean Squared Error (MSE) and R Squared. Two commonly used metrics for classification ML problems include Accuracy and Confusion Matrix.
+(from https://www.analyticsvidhya.com/blog/2021/05/know-the-best-evaluation-metrics-for-your-regression-model/ and https://www.analyticsvidhya.com/blog/2021/07/metrics-to-evaluate-your-classification-model-to-take-the-right-decisions/)
+
+
+<br>
+
+
+#### Question 4:
+As discussed, statistical models can be used for different purposes. These purposes can generally be classified into the following three categories. Provide a brief description of each.
+
+**Answer:**
+<br>
+A descriptive model uses mainly unsupervised learning approaches "for outlining, classifying, and drawing out information for what had happened in the past."
+(from https://medium.com/appengine-ai/descriptive-analysis-machine-learning-268507a99e2)
+
+  FINISH THIS QUESTION
+<br>
+
+
+#### Question 5:
+
+
+
+An inferential model is 
+
+
+```{R, echo = F}
+
+hist(mpg$hwy, xlab = "highway miles per gallon")
+
+```
+
+
+
+Cars that have between 15 to 20 highway miles and 25 to 30 highway miles appear the most frequently, while cars that have between 20 to 25 highway miles follow closely behind. Cars that don't have between 15 to 30 highway miles appear infrequently, with cars that have between 35 to 45 highway miles per gallon appearing the least frequently of all. 
+
+From this information, I've learned that cars made between 1999 and 2008 are likely to run between 15 to 30 highway miles per gallon of gasoline.
+
+
+
+Exercise 2:
+
+
+```{R, echo = F}
+
+attach(mpg)
+plot(hwy, cty)
+
+```
+
+
+
+There appears to be a strong positive correlation between the variables hwy and cty. This tells us that as the number of highway miles per gallon of gasoline a car has rises, the number of city miles per gallon of gasoline tends to rise as well. This does not mean that these variables are dependent, they are simply related.
+
+
+
+Exercise 3:
+
+
+The following website was used to understand how to order my barplot from highest to lowest values: 
+https://statisticsglobe.com/table
+
+
+```{R, echo = F}
+
+table_values <- table(mpg$manufacturer)
+
+ordered_table_values <- table_values[order(table_values, decreasing = TRUE)]
+
+barplot(height = ordered_table_values, las = 1, cex.names = 0.45, horiz = TRUE)
+
+```
+
+
+
+Lincoln produced the least amount of cars, while Dodge produced the most.
+
+
+
+Exercise 4:
+
+
+
+```{R, echo = F}
+
+ggplot(mpg, aes(x = hwy, fill = cyl)) + geom_boxplot()
+
+```
+
+
+
+Exercise 5:
+
+
+
+```{R, echo = F}
+
+table_manu <- table(mpg$manufacturer)
+
+table_model <- table(mpg$model)
+
+table_trans <- table(mpg$trans)
+
+table_drv <- table(mpg$drv)
+
+table_fl <- table(mpg$fl)
+
+table_class <- table(mpg$class)
+
+table_qual <- data.table()
+
+table_qual[ , `:=` (table_trans = table_trans)]
+
+
+
+table_qual
+
+mpg_numerical <- mutate(mpg, manufacturer = NULL, model = NULL, trans = NULL, drv = NULL, fl = NULL, class = NULL)
+
+corrplot(cor(mpg_numerical), order = "hclust", type = "lower", col = COL2("PRGn"), tl.col = "black")
+
+```
+
+# Things I need help with
+Why are my staged boxes gone?
+
+How do I submit the homework the way Coburn wants?
+
+Should I include nonnumeric variables in my correlation matrix for #5?
