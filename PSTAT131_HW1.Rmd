@@ -36,9 +36,7 @@ Unsupervised learning is also a subcategory of machine learning used to "discove
 The main difference between supervised and unsupervised learning is that supervised learning trains by using labeled data, which means that human intervention is required. Humans are needed to label data appropriately. This labeled data acts as an "answer key" that helps our supervised learning algorithm learn to predict/estimate more accurately. Unsupervised learning does not need labeled data, and instead works with large amounts of unlabeled data to train itself.
 (from https://www.ibm.com/cloud/blog/supervised-vs-unsupervised-learning)
 
-
 <br>
-
 
 #### Question 2:
 Explain the difference between a regression model and a classification model, specifically in the context of machine learning.
@@ -48,9 +46,7 @@ Explain the difference between a regression model and a classification model, sp
 "The main difference between Regression and Classification algorithms is that Regression algorithms are used to predict the continuous values such as price, salary, age... and Classification algorithms are used to predict/classify discrete values such as Male or Female, True or False, Spam or Not Spam..."
 (from https://www.javatpoint.com/regression-vs-classification-in-machine-learning)
 
-
 <br>
-
 
 #### Question 3:
 Name two commonly used metrics for regression ML problems. Name two commonly used metrics for classification ML problems.
@@ -60,9 +56,7 @@ Name two commonly used metrics for regression ML problems. Name two commonly use
 Two commonly used metrics for regression ML problems include Mean Squared Error (MSE) and R Squared. Two commonly used metrics for classification ML problems include Accuracy and Confusion Matrix.
 (from https://www.analyticsvidhya.com/blog/2021/05/know-the-best-evaluation-metrics-for-your-regression-model/ and https://www.analyticsvidhya.com/blog/2021/07/metrics-to-evaluate-your-classification-model-to-take-the-right-decisions/)
 
-
 <br>
-
 
 #### Question 4:
 As discussed, statistical models can be used for different purposes. These purposes can generally be classified into the following three categories. Provide a brief description of each.
