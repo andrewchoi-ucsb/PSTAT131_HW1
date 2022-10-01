@@ -66,15 +66,39 @@ As discussed, statistical models can be used for different purposes. These purpo
 A descriptive model uses mainly unsupervised learning approaches "for outlining, classifying, and drawing out information for what had happened in the past."
 (from https://medium.com/appengine-ai/descriptive-analysis-machine-learning-268507a99e2)
 
-  FINISH THIS QUESTION
+An inferential model runs "data points to a machine learning model to calculate an output such as a single numerical score."
+(from https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-inference-overview#:~:text=Anomaly%20Detection-,Introduction,machine%20learning%20model%20into%20production.%E2%80%9D)
+
+A predictive model uses "machine learning and data mining to predict and forecast lilely future outcomes with the aid of historical and exisitng data."
+(from https://www.netsuite.com/portal/resource/articles/financial-management/predictive-modeling.shtml)
+
+<br>
+
+#### Question 5:
+Define mechanistic. Define empirically-driven. How do these model types differ? How are they similar?
+
+**Answer**
+<br>
+"A mechanistic model uses a theory to predict what will happen in the real world... Empirical modeling studies real-world events to develop a theory." While they both have the same components, i.e. they make use of theories and real-world occurrences, the order in which these components are used are opposite. Mechanistic models use theories as inputs and real-world occurrences as outputs, whereas empirical models use real-world occurences as inputs and theories as outputs.
+(from https://smallbusiness.chron.com/mechanistic-model-12706.html)
+
+<br>
+
+In general, is a mechanistic or empirically-driven model easier to understand? Explain your choice.
+
+**Answer**
+<br>
+
+In my opinion it's easier to understand an empirically-driven model simply because it's easier to generate a theory by studying real-world occurrences, than to predict a real-world occurrence using a theory.
+
+<br>
+
+Describe how the bias-variance tradeoff is related to the use of mechanistic or empirically-driven models.
+
+**Answer**
 <br>
 
 
-#### Question 5:
-
-
-
-An inferential model is 
 
 
 ```{R, echo = F}
