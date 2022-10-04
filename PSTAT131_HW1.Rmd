@@ -2,9 +2,9 @@
 title: "PSTAT131_HW1"
 author: "Andrew Choi"
 date: "2022-10-29"
-output: 
-  html_document:
-    keep_md: true
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -201,8 +201,10 @@ corrplot(cor(mpg_numerical), order = "hclust", type = "lower", col = COL2("PRGn"
 ```
 
 # Things I need help with
-Why are my staged boxes gone?
+question 5.3
 
-How do I submit the homework the way Coburn wants?
+which one has higher variance and which one has 
+
+How do I submit the homework the way Coburn wants? (how to upload knitted html file to github?)
 
 Should I include nonnumeric variables in my correlation matrix for #5?
