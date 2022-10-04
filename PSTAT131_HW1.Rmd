@@ -2,9 +2,13 @@
 title: "PSTAT131_HW1"
 author: "Andrew Choi"
 date: "2022-10-29"
+<<<<<<< HEAD
 output:
   pdf_document: default
   html_document: default
+=======
+output: html_document
+>>>>>>> bc17d12e73ad5ef87a04b763d7ec67e267d99427
 ---
 
 ```{r setup, include=FALSE}
@@ -203,8 +207,11 @@ corrplot(cor(mpg_numerical), order = "hclust", type = "lower", col = COL2("PRGn"
 # Things I need help with
 question 5.3
 
+<<<<<<< HEAD
 which one has higher variance and which one has 
 
+=======
+>>>>>>> bc17d12e73ad5ef87a04b763d7ec67e267d99427
 How do I submit the homework the way Coburn wants? (how to upload knitted html file to github?)
 
 Should I include nonnumeric variables in my correlation matrix for #5?
