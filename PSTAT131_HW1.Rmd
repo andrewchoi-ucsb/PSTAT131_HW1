@@ -2,13 +2,9 @@
 title: "PSTAT131_HW1"
 author: "Andrew Choi"
 date: "2022-10-29"
-<<<<<<< HEAD
 output:
   pdf_document: default
   html_document: default
-=======
-output: html_document
->>>>>>> bc17d12e73ad5ef87a04b763d7ec67e267d99427
 ---
 
 ```{r setup, include=FALSE}
@@ -104,7 +100,35 @@ Describe how the bias-variance tradeoff is related to the use of mechanistic or 
 **Answer**
 <br>
 
+Empirical models use individual events to create a generalization. Intuitively, it would make sense that empirical models therefore typically have high variance and low bias. After all, if a function is using individual data points to create a line, it's much easier for that model to overfit, thus causing high variance and low bias.
+On the other hand, mechanistic models use theories to predict individual events. If a model uses a very general and broad theory as an input, it can lead to overgeneralizations in the model as well. Thus, mechanistic models can easily underfit, causing high bias and low variance.
 
+<br>
+
+#### Question 6:
+A political candidate’s campaign has collected some detailed voter history data from their constituents. The campaign is interested in two questions:
+
+1.) Given a voter’s profile/data, how likely is it that they will vote in favor of the candidate?
+
+2.) How would a voter’s likelihood of support for the candidate change if they had personal contact with the candidate?
+
+**Answer**
+<br>
+
+Question 1.) is a predictive question. This is because it is trying to predict how a voter will vote given a predictor (voter's profile/data).
+
+Question 2.) is an inferential question. This is because it is trying to determine whether there's a relationship between two variables.
+<br>
+
+<br>
+<br>
+<br>
+
+## Exploratory Data Analysis
+
+<br>
+
+**Exercise 1:**
 
 
 ```{R, echo = F}
@@ -121,7 +145,7 @@ From this information, I've learned that cars made between 1999 and 2008 are lik
 
 
 
-Exercise 2:
+**Exercise 2:**
 
 
 ```{R, echo = F}
@@ -137,7 +161,7 @@ There appears to be a strong positive correlation between the variables hwy and 
 
 
 
-Exercise 3:
+**Exercise 3:**
 
 
 The following website was used to understand how to order my barplot from highest to lowest values: 
@@ -158,9 +182,9 @@ barplot(height = ordered_table_values, las = 1, cex.names = 0.45, horiz = TRUE)
 
 Lincoln produced the least amount of cars, while Dodge produced the most.
 
+<br>
 
-
-Exercise 4:
+**8Exercise 4:**
 
 
 
@@ -169,34 +193,14 @@ Exercise 4:
 ggplot(mpg, aes(x = hwy, fill = cyl)) + geom_boxplot()
 
 ```
+There doesn't appear to be a pattern.
 
 
-
-Exercise 5:
+**Exercise 5:**
 
 
 
 ```{R, echo = F}
-
-table_manu <- table(mpg$manufacturer)
-
-table_model <- table(mpg$model)
-
-table_trans <- table(mpg$trans)
-
-table_drv <- table(mpg$drv)
-
-table_fl <- table(mpg$fl)
-
-table_class <- table(mpg$class)
-
-table_qual <- data.table()
-
-table_qual[ , `:=` (table_trans = table_trans)]
-
-
-
-table_qual
 
 mpg_numerical <- mutate(mpg, manufacturer = NULL, model = NULL, trans = NULL, drv = NULL, fl = NULL, class = NULL)
 
@@ -204,14 +208,4 @@ corrplot(cor(mpg_numerical), order = "hclust", type = "lower", col = COL2("PRGn"
 
 ```
 
-# Things I need help with
-question 5.3
-
-<<<<<<< HEAD
-which one has higher variance and which one has 
-
-=======
->>>>>>> bc17d12e73ad5ef87a04b763d7ec67e267d99427
-How do I submit the homework the way Coburn wants? (how to upload knitted html file to github?)
-
-Should I include nonnumeric variables in my correlation matrix for #5?
+The hwy and cty, and displ and cyl variables are positively correlated with each other. The cyl and cty, displ and cty, cyl and hwy, and displ and hwy are negatively correlated with each other. All of the correlations seem to agree with each other, none of them are unique or surprising.
